@@ -30,7 +30,7 @@
 
 		slotdfp['banner-4'] = googletag.defineOutOfPageSlot('/1038086/development','banner-4').setTargeting('formato',['slider']).setTargeting('pos',[(++indexformats).toString()]).addService(googletag.pubads());
 
-
+		googletag.pubads().setTargeting("targetelm", 'dfpslider');
 	    googletag.pubads().setTargeting("testeab", (function(){return Math.trunc(Math.random()*10)+1})().toString());
 	    googletag.pubads().setTargeting("width", screen.width.toString());
 	    googletag.pubads().setTargeting("height", screen.width.toString());
@@ -61,28 +61,28 @@
 	  </div>
 	</nav>
 
-  <div class="hero-carousel" data-flickity="" data-js="hero-carousel">
-    <div class="hero-carousel__cell hero-carousel__cell--1" id='banner-1'>
+	<div class="hero-carousel" id="dfpslider"></div>
+
+	<div id="banner-1">
 		<script type="text/javascript">
 			googletag.cmd.push(function() { googletag.display('banner-1'); });
 		</script>
-    </div>
-    <div class="hero-carousel__cell hero-carousel__cell--2" id='banner-2'>
+	</div>
+	<div id="banner-2">
 		<script type="text/javascript">
 			googletag.cmd.push(function() { googletag.display('banner-2'); });
 		</script>
-    </div>
-    <div class="hero-carousel__cell hero-carousel__cell--3" id='banner-3'>
+	</div>
+	<div id="banner-3">
 		<script type="text/javascript">
 			googletag.cmd.push(function() { googletag.display('banner-3'); });
 		</script>
-    </div>
-    <div class="hero-carousel__cell hero-carousel__cell--4" id='banner-4'>
+	</div>
+	<div id="banner-4">
 		<script type="text/javascript">
 			googletag.cmd.push(function() { googletag.display('banner-4'); });
 		</script>
-    </div>
-  </div>
+	</div>
 
 <div class="main">
   <div class="container">

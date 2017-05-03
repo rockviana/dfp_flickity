@@ -1,0 +1,34 @@
+{
+  "name": "Flickity Slider - Outofpage",
+  "description": "Template para apendar anuncios em slider do plugin Flickity, adaptado para funcionar com asynchronous e iframe ad tags",
+  "variables": [
+    {
+      "mimeTypes": [
+        "PNG",
+        "GIF",
+        "JPG"
+      ],
+      "label": "imagem",
+      "uniqueName": "imagem",
+      "description": "Imagem a ser inserida no slider",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "url",
+      "uniqueName": "url",
+      "description": "Url destino banner",
+      "isRequired": true,
+      "variableType": "URL"
+    }
+  ],
+  "formatter": "\u003cscript language\u003d\"JavaScript\" type\u003d\"text/javascript\"\u003e\n    var configs_%n \u003d {};\n    configs_%n[\u0027sync\u0027] \u003d top\u003d\u003dself;\n\n    (function(configs){\n        var winstage \u003d configs.sync?window:window.parent;\n        var docstage \u003d winstage.document;\n\n        //verifica se o plugin esta disponivel \n        if ( !winstage.Flickity ){\n        \treturn false;\n        }\n\n        if( !winstage[\u0027%%PATTERN:targetelm%%\u0027] ){\n        \twinstage[\u0027%%PATTERN:targetelm%%\u0027] \u003d new Flickity( docstage.getElementById(\u0027%%PATTERN:targetelm%%\u0027) );\n        }\n       \t\n       \tvar slidcode \u003d\u0027\u003ca href\u003d\"%%CLICK_URL_UNESC%%[%url%]\" target\u003d\"_blank\"\u003e\u003cimg target\u003d\"%%PATTERN:targetelm%%\" src\u003d\"[%imagem%]\" border\u003d\"0\" galleryimg\u003d\"no\" /\u003e\u003c\\/a\u003e\u0027;\n\n       \twinstage[\u0027%%PATTERN:targetelm%%\u0027].append( slidcode );\n        \n    })(configs_%n);\n\u003c/script\u003e\n",
+  "type": "USER_DEFINED",
+  "isInterstitial": true,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isNative360ImageEligible": false,
+  "isSafeFrameCompatible": false
+}
